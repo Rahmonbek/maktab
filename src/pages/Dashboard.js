@@ -263,7 +263,6 @@ export default class Dashboard extends Component {
   </video>
   </div>
   <div className={style.binaf1}>
-
       <h1>Haqiqiy ta'lim odamni odamiylikka tayyorlashdir</h1>
   </div>
   <div className={style.ustoz}>

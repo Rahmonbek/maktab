@@ -21,4 +21,8 @@
 .icons i{font-size: 40px;}
 .colImg{display:flex; justify-content:center; align-items:center; padding:30px}
 }
+@media (max-width:699px){
+    .foot p{font-size: 18px;};
+    .icons i{font-size: 25px;}
+}
  
