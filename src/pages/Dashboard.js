@@ -536,7 +536,7 @@ export default class Dashboard extends Component {
                   iconLayout: "default#image",
                 }}
                 properties={{
-                  hintContent: `<h6><b className="personStyle">33 - maktab</b></h6>`,
+                  hintContent: `<h6><b className="personStyle">1 - maktab</b></h6>`,
                 }}
                 modules={["geoObject.addon.hint"]}
               />
