@@ -442,7 +442,7 @@ export default class Dashboard extends Component {
                     <img src={school} />
                   </a>
                 </div>
-                <p >O'zbekiston Respublikasi Prezidentining rasmiy veb-sayti</p>
+                <p className="hamkorp">O'zbekiston Respublikasi Prezidentining rasmiy veb-sayti</p>
               </div>
               <div
                 style={{
@@ -450,7 +450,6 @@ export default class Dashboard extends Component {
                   flexDirection: "column",
                   padding: "20px",
                   alingItems: "center",
-                  
                 }}
               >
                 <div className="toolpat" style={{ backgroundColor: "white" }}>
