@@ -8,6 +8,7 @@
 .video1{width:100%; position:sticky; z-index: -1; top:-60px; margin-top: -100vh;}
 .video1 video{width:100%;}
 .binaf1{width:100%; height:100vh; position:sticky; margin-top: -200vh; display:flex; align-items:center; justify-content:center; 
+    
     z-index: -1; top:0px; background-color:rgba(102, 51, 153, 0.433)}
 .binaf1 h1{font-size: 45px; color:white; width:60%; margin:auto; text-align: center; line-height: 2.3em;}
 
@@ -67,9 +68,8 @@ transition: 1s;
     .video{top:50px;}
     .video video{height:500px !important;}
     .binaf{height:500px;top:25px;}
-    .binaf1{height:500px;margin-top: -500px; top:50px; position:sticky;display:flex; align-items:center; justify-content:center; }
-    .binaf h1{width:80%; font-size:30px; text-align: center;}
-    /* .binaf1 h1{width:80%; font-size:30px; text-align: center;position: fixed;} */
+    .binaf1{height:500px;margin-top: -500px; top:50px}
+    .binaf h1{width:80%; font-size:30px;}
     .second{margin-top: 500px;}
     .new{ background-size: cover; background-position: 0px;}
     .video1{margin-top: 0px; top:100px;}
@@ -79,8 +79,7 @@ transition: 1s;
         .video{top:50px;}
         .video video{height:500px !important; width:200%; position: relative; left:-50%;}
         .binaf{height:500px;top:25px;}
-        /* .binaf1{height:500px;margin-top: -500px; top:50px} */
-        .binaf1{height:500px;margin-top: -500px; top:50px; position:sticky;display:flex; align-items:center; justify-content:center; }
+        .binaf1{height:500px;margin-top: -500px; top:50px}
         .binaf h1{width:80%; font-size:30px; line-height: 1.2em;}
         .second{margin-top: 500px; padding:50px 10px}
         .second_item{padding:10px}
@@ -90,3 +89,5 @@ transition: 1s;
         .ustoz_item img{height:250px}
         .binaf1 h1{font-size: 25px; line-height: 1.2em; }
         }
+
+        .load{width:100%; height:100%; position:fixed; top:0px; left:0px; z-index: 567; display: flex; justify-content:center; align-items:center;}
