@@ -23,6 +23,9 @@ export default class NavbarT extends Component {
     this.setState({id:1})
     
    }
+   closeNav=()=>{
+    document.querySelector('#navb').style.display="none"
+   }
     render() {
 
         return (
@@ -36,21 +39,21 @@ export default class NavbarT extends Component {
                     </div>
                     <div className={style.nav}>
                     <ul id="navb">
-                            <li>
+                            <li onClick={this.closeNav}>
                                 <a className={style.lik} activeStyle={{color:"gold"}} href="#">Bosh sahifa</a>
                             </li>
-                            <li>
+                            <li onClick={this.closeNav}>
                                 <a className={style.lik} activeStyle={{color:"gold"}} href="#fotolar">Foto lavhalar</a>
                             </li>
-                            <li>
+                            <li onClick={this.closeNav}>
                                 <a className={style.lik} activeStyle={{color:"gold"}} href="#yangilik">Yangiliklar</a>
                             </li>
                          
-                            <li>
+                            <li onClick={this.closeNav}>
                                 <a className={style.lik} activeStyle={{color:"gold"}} href="#video">Video lavhalar</a>
                             </li>
                            
-                            <li>
+                            <li onClick={this.closeNav}>
                                 <a className={style.lik} activeStyle={{color:"gold"}} href="#bog'lanish">Bog'lanish</a>
                             </li>
                         </ul>
