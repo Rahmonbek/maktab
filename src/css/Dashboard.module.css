@@ -91,6 +91,29 @@ transition: 1s;
         }
 
         .load{width:100%; height:100%; position:fixed; top:0px; left:0px; z-index: 567; display: flex; justify-content:center; align-items:center;}
+        
         @media (min-width:1500px){
             .video video{width:120%; position: relative; left:-10%}
+            .binaf h1{font-size: 60px;}
+            .fikr{font-size: 37px;}
+            .ism{font-size: 30px; }
+            .sarlavha{font-size: 45px;}
+            .items_item p{font-size: 25px;}
+            .ustoz_item p{font-size: 25px;}
+            .ustoz_item h4{font-size: 32px;}
+            .ustoz_item img{height: 400px ;}
+            .gal h1{font-size: 48px;}
+            .gal img{height: 350px;}
+            .ustoz{margin-top:1800px}
+            .video1 video{width:110%; position: relative; left: -5%; }
+            .binaf1{height:110vh}
+            .ustoz h1{font-size: 50px;}
+            .new_item img{height: 380px;}
+            .new_item h4{font-size: 30px;}
+            .new_item div{height: 620px;}
+            .new_item .date{font-size: 25px;}
+            .new_item .date i{font-size: 25px;}
+            .videos h1{font-size: 48px;}
+            .you{height: 470px;}
+            .binaf1 h1{font-size: 68px;}
         }

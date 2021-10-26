@@ -22,7 +22,12 @@
 .colImg{display:flex; justify-content:center; align-items:center; padding:30px}
 }
 @media (max-width:699px){
-    .foot p{font-size: 18px;};
-    .icons i{font-size: 25px;}
+    .foot p{font-size: 18px;}
 }
- 
+
+@media (min-width:1500px){
+    .foot p{font-size: 30px;}
+    .foot li a{font-size: 32px;}
+    .icons i{font-size: 45px;}
+    .icons a{width: 80px;height: 80px;}
+}
