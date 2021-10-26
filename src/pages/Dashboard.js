@@ -99,7 +99,7 @@ export default class Dashboard extends Component {
       <div className={style.second}>
 <div className={style.second_item}>
     <Row>
-    <Col lg={6} md={6} sm={12}>
+    <Col lg={6} md={12} sm={12}>
         <p className={style.fikr}>
     Ba’zi maktablarda salbiy baholash tizimi bekor qilindi, imtihonni topshirish uchun istagancha urinish mumkin. Ammo hayotda bu holatning aksi senda uchrasa bundan o‘pkalama.
     </p>
@@ -107,7 +107,7 @@ export default class Dashboard extends Component {
     Shavkat Mirziyoyev
 </p>
         </Col>
-    <Col lg={6} md={6} sm={12}>
+    <Col lg={6} md={12} sm={12}>
             <img src="https://cdnn1.img.sputniknews-uz.com/img/07e5/07/0f/19690840_0:67:1280:787_1920x0_80_0_0_6970177d9b6645c4dae7960ebb1c2e78.jpg.webp"/>
         </Col>
     </Row>

@@ -29,7 +29,7 @@ export default class Footer extends Component {
                             </li>
                         </ul>
                 </Col>
-                        <Col lg={4} md={12} sm={12}>
+                        <Col className={style.colImg} lg={4} md={12} sm={12}>
                         <img src={logo}/>
                     </Col>
                     <Col lg={4} md={12} sm={12}>
