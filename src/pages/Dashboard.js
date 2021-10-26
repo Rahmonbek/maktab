@@ -217,6 +217,7 @@ export default class Dashboard extends Component {
     </div>
 </div>
 </Carousel>
+<div id="fotolar"></div>
       </div>
       <div className={style.gal}>
   <h1 className={style.sarlavha}> Fotolavhalar</h1>
@@ -262,10 +263,13 @@ export default class Dashboard extends Component {
   </video>
   </div>
   <div className={style.binaf1}>
+
       <h1>Haqiqiy ta'lim odamni odamiylikka tayyorlashdir</h1>
   </div>
   <div className={style.ustoz}>
-      <h1 className={style.sarlavha}> Bizning o'qituvchilarimiz</h1>
+  <div id="yangilik"></div>
+
+      <h1 className={style.sarlavha}> Yangiliklar</h1>
 <br/>
       <Carousel
   swipeable={false}
@@ -325,6 +329,8 @@ export default class Dashboard extends Component {
 
 </Carousel>
 <br/>
+<div id="video"></div>
+
       </div>
       <div className={style.videos}>
   <h1 className={style.sarlavha}> Videolavhalar</h1>
@@ -507,6 +513,8 @@ export default class Dashboard extends Component {
               </div>
             </Carousel>
           </div>
+          <div id="bog'lanish"></div>
+
         </div>
         <div className={style.xarita}>
 
