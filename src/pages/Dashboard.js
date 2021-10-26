@@ -442,7 +442,7 @@ export default class Dashboard extends Component {
                     <img src={school} />
                   </a>
                 </div>
-                <p className="hamkorp">O'zbekiston Respublikasi Prezidentining rasmiy veb-sayti</p>
+                <p >O'zbekiston Respublikasi Prezidentining rasmiy veb-sayti</p>
               </div>
               <div
                 style={{
