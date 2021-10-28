@@ -33,9 +33,10 @@
 .items_item:hover{box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;}
 .items_item p{font-size: 18px; color:rebeccapurple; margin-top:20px;  text-align:center;}
 .ustoz{width:100%;margin-top:1200px; background-color: white; padding:50px 10%;}
-.ustoz_item img{width: 100%; height:300px;}
+.tad{width:100%;margin-top:0px; background-color: white; padding:50px 10%;}
+.ustoz_item img{width: 100%; height:230px;}
 .ustoz_item{padding:10px;}
-.ustoz_item div{padding:10px;  background-color:white;box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; padding-bottom:5px;}
+.ustoz_item div{padding:10px;  background-color:white;box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; padding-bottom:5px; height:430px;}
 .ustoz_item h4{font-size: 26px; margin-top:20px; text-align: center; color:rebeccapurple}
 .ustoz_item p{font-size: 16px; color:rebeccapurple; text-align: center;}
 .gal{ padding:50px 10%; background-color: white;}
@@ -55,9 +56,21 @@ transition: 1s;
 .new_item{padding:10px;}
 .new_item div{padding:10px; height:440px; position: relative;  background-color:white;box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; padding-bottom:5px;}
 .new_item h4{font-size: 22px; margin-top:20px; text-align: center; color:rebeccapurple}
+.tad_item img{width: 100%; height:230px;}
+.tad_item{padding:10px;}
+.tad_item div{padding:10px; height:410px; position: relative;  background-color:white;box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; padding-bottom:5px;}
+.tad_item h4{font-size: 22px; margin-top:20px; text-align: center; color:rebeccapurple}
+
 .new_item .text{font-size: 18px; color:rebeccapurple; text-align: center;}
 .new_item .date{font-size: 16px; position: absolute; bottom:0px; left:0px; width:100%; color:rebeccapurple; text-align: center;}
 .new_item .date i{font-size: 18px; margin-right: 10px; color:rebeccapurple; text-align: center;}
+.tad_item .text{font-size: 18px; color:rebeccapurple; text-align: center;}
+.tad_item .date{font-size: 16px; position: absolute; bottom:30px; left:0px; width:100%; color:rebeccapurple; text-align: center;}
+.tad_item .date i{font-size: 18px; margin-right: 10px; color:rebeccapurple; text-align: center;}
+.tad_item .mar{font-size: 16px; position: absolute; bottom:60px; left:0px; width:100%; color:rebeccapurple; text-align: center;}
+.tad_item .mar i{font-size: 18px; margin-right: 10px; color:rebeccapurple; text-align: center;}
+.tad_item .time{font-size: 16px; position: absolute; bottom:0px; left:0px; width:100%; color:rebeccapurple; text-align: center;}
+.tad_item .time i{font-size: 18px; margin-right: 10px; color:rebeccapurple; text-align: center;}
 .videos{width:100%; padding:50px 10%; background-color:white;}
 
 .videos_item{padding:20px 10px;}
@@ -86,6 +99,7 @@ transition: 1s;
         .new{ background-size: cover; background-position: 0px;}
         .video1{margin-top: 0px; top:100px;}
         .ustoz{margin-top: 0px;}
+        .tad{margin-top: 0px;}
         .ustoz_item img{height:250px}
         .binaf1 h1{font-size: 25px; line-height: 1.2em; }
         }
@@ -106,16 +120,61 @@ transition: 1s;
             .ustoz_item img{height: 400px ;}
             .gal h1{font-size: 48px;}
             .gal img{height: 350px;}
-            .ustoz{margin-top:1800px}
             .video1 video{width:110%; position: relative; left: -5%; }
             .binaf1{height:110vh}
             .ustoz h1{font-size: 50px;}
+            .ustoz{margin-top:1800px}
+            .tad h1{font-size: 50px;}
+            .tad{margin-top:1800px}
+
             .new_item img{height: 380px;}
             .new_item h4{font-size: 30px;}
             .new_item div{height: 620px;}
             .new_item .date{font-size: 25px;}
             .new_item .date i{font-size: 25px;}
+           
+            .tad_item img{height: 380px;}
+            .tad_item h4{font-size: 30px;}
+            .tad_item div{height: 620px;}
+            .tad_item .date{font-size: 25px;}
+            .tad_item .date i{font-size: 25px;}
+            .tad_item .mar{font-size: 25px;}
+            .tad_item .mar i{font-size: 25px;}
+            .tad_item .time{font-size: 25px;}
+            .tad_item .time i{font-size: 25px;}
             .videos h1{font-size: 48px;}
             .you{height: 500px;}
             .binaf1 h1{font-size: 68px;}
         }
+
+        .colT{display: flex;color:#801c94; align-items: center; justify-content: center; width:100%; height:30px;}
+.colT:hover{color:#0d8c81;}
+.colT p{margin-left:10px; margin-top:13px; font-size: 15px;}
+
+.pp{font-size:19px; color:#666A6F; font-style: italic; margin-top:20px}
+.elem{background-color: white; height:180px; padding-left: 5%; display: flex; align-items: center; border-top: 2px solid #801c94;
+    border-bottom: 2px solid #801c94;}
+.elem img{width:30px;}
+.elem h2{color:#801c94; font-size:23px}
+
+
+
+@media (min-width:451px) and (max-width:991px){
+   .elem{height: 340px;}
+   .htr{margin-top: 20px;}
+   
+   
+   }
+   
+   @media (max-width:450px){
+   .colT{padding:10px}
+   
+   }
+   @media (max-width:560px) {
+        .elem{height: 40vh ;}
+       .colT{margin-top:10px}
+       }
+       @media (min-width:1500px){
+           .container{margin-top: -100px;}
+     .elem{padding-left: 300px;}
+       }

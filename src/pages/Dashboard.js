@@ -28,21 +28,32 @@ import Footer from './Footer'
 import { Clusterer, Map, Placemark, YMaps } from 'react-yandex-maps'
 import GridLoader from "react-spinners/GridLoader";
 import axios from 'axios'
-import { url, user } from '../host/Host'
+import { idMaktab, url, user } from '../host/Host'
 import {getNews} from '../host/Config'
+import pic20 from "../images/twitter 2.png";
 
 export default class Dashboard extends Component {
   state={
     loader:true,
     news:null,
-    school:null
-  }
+    school:null,
+  region:null,
+  staff:null,
+spec:null,
+event:null,  
+}
   
   getSchool = () => {
     axios.get(`${url}/school-by-admin/${user}`).then((res) => {
+     console.log(res.data)
       this.setState({
         school: res.data,
+       
       });
+axios.get(`${url}/region/${res.data.region}/`).then(res1=>{
+  this.setState({region:res1.data})
+  console.log(res1.data)
+})
       // setTimeout(() => {
       //   this.setState({
       //     loader: false,
@@ -53,17 +64,50 @@ export default class Dashboard extends Component {
   getNews = () => {
     getNews()
       .then((res) => {
-      console.log(res.data)  
+      this.setState({
+        news:res.data
+      })
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
+  getStaff=()=>{
+    axios.get(`${url}/staff-by-school/${idMaktab}/`).then(res=>{
+      this.setState({
+        staff:res.data
+      })
+    })
+  }
+  getEvent=()=>{
+    axios.get(`${url}/event/${idMaktab}/`).then(res=>{
+      this.setState({
+        event:res.data
+      })
+    })
+  }
+  getSpec=()=>{
+  axios.get(`${url}/spec/`).then(res=>{
+    this.setState({
+      spec:res.data
+    })
+  })
+}
+echoSpec=(id)=>{
+  var s=""
+  this.state.spec.map(item=>{
+    if(item.id===id){
+s=item.name
+    }
+  })
+  return(s)
+}
   componentDidMount() {
     this.getNews();
+    this.getEvent();
     this.getSchool();
-
+this.getStaff()
+this.getSpec()
     window.addEventListener("load", () => {
       setTimeout(() => {
         this.setState({
@@ -143,25 +187,68 @@ export default class Dashboard extends Component {
   </video>
   </div>
   <div className={style.binaf}>
-      <h1>Xorazm viloyati Gurlan tumani <br/> 1 - ayrim fanlar chuqur o'rganiladigan Davlat ixtisoslashtirilgan maktabi</h1>
+      <h1>{this.state.region!==null?this.state.region.address:''} {this.state.region!==null?this.state.region.region_name:''} tumani 
+      <br/> {this.state.school!==null?this.state.school.school_number:''} - {this.state.school!==null?this.state.school.type:''}</h1>
   </div>
       <div className={style.second}>
+        
 <div className={style.second_item}>
     <Row>
     <Col lg={6} md={12} sm={12}>
         <p className={style.fikr}>
-    Ba’zi maktablarda salbiy baholash tizimi bekor qilindi, imtihonni topshirish uchun istagancha urinish mumkin. Ammo hayotda bu holatning aksi senda uchrasa bundan o‘pkalama.
+        {this.state.school!==null?this.state.school.m_h_o:''}
     </p>
     <p className={style.ism}>
-    Shavkat Mirziyoyev
+    {this.state.school!==null?this.state.school.m_h_o_t:''}
 </p>
         </Col>
     <Col lg={6} md={12} sm={12}>
-            <img src="https://cdnn1.img.sputniknews-uz.com/img/07e5/07/0f/19690840_0:67:1280:787_1920x0_80_0_0_6970177d9b6645c4dae7960ebb1c2e78.jpg.webp"/>
+            <img src= {this.state.school!==null?this.state.school.m_h_o_r:''}/>
         </Col>
     </Row>
 </div>
       </div>
+      <div className={style.elem}>
+              <Row style={{ alignItems: "center" }}>
+                <Col className={style.htr} lg={2} md={12} sm={12}>
+                  <h2 className={style.colT}>
+                    Bizning ijtimoiy sahifalarimiz:
+                  </h2>
+                </Col>
+
+                <Col className={style.htr} lg={2} md={6} sm={12}>
+                  <a href={this.state.school?this.state.school.telegram:''} className={style.colT} target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Telegram_Messenger.png" />
+                    <p>Telegram sahifasi</p>
+                  </a>
+                </Col>
+                <Col className={style.htr} lg={2} md={6} sm={12}>
+                  <a href={this.state.school?this.state.school.instagram:''} className={style.colT} target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" />
+                    <p>Instagram sahifasi</p>
+                  </a>
+                </Col>
+                <Col className={style.htr} lg={2} md={6} sm={12}>
+                  <a href={this.state.school?this.state.school.facebook:''} className={style.colT} target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" />
+                    <p>Facebook sahifasi</p>
+                  </a>
+                </Col>
+                <Col className={style.htr} lg={2} md={6} sm={12}>
+                  <a href="#" className={style.colT} target="_blank">
+                    <img src={pic20} />
+                    <p>Twitter sahifasi</p>
+                  </a>
+                </Col>
+                <Col className={style.htr} lg={2} md={6} sm={12}>
+                  <a href={this.state.school?this.state.school.youtube:''} className={style.colT} target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" />
+                    <p>You tube sahifasi</p>
+                  </a>
+                </Col>
+              </Row>
+            </div>
+
       <div className={style.items}>
       <h1 className={style.sarlavha}> Bizning afzalliklarimiz</h1>
 <br/>
@@ -220,51 +307,18 @@ export default class Dashboard extends Component {
   dotListClass="custom-dot-list-style"
   itemClass="carousel-item-padding-40-px"
 >
-<div>
+{this.state.staff!==null && this.state.spec!==null?this.state.staff.map(item=>{
+  return(<div>
     <div className={style.ustoz_item}> 
     <div>
-    <img src={ustoz1}/>
-        <h4>Ismoilov Rahmon Zohidovich</h4>
-        <p>Ona tili o'qituvchisi </p>
+    <img src={item.image}/>
+        <h4>{item.full_name}</h4>
+        <p>{this.echoSpec(item.speciality[0])}</p>
         </div>
     </div>
 </div>
-<div>
-    <div className={style.ustoz_item}> 
-    <div>
-    <img src={ustoz2}/>
-        <h4>Ismoilov Rahmon Zohidovich</h4>
-        <p>Ona tili o'qituvchisi </p>
-        </div>
-    </div>
-</div>
-<div>
-    <div className={style.ustoz_item}> 
-    <div>
-    <img src={ustoz3}/>
-        <h4>Ismoilov Rahmon Zohidovich</h4>
-        <p>Ona tili o'qituvchisi </p>
-        </div>
-    </div>
-</div>
-<div>
-    <div className={style.ustoz_item}> 
-    <div>
-    <img src={ustoz4}/>
-        <h4>Ismoilov Rahmon Zohidovich</h4>
-        <p>Ona tili o'qituvchisi </p>
-        </div>
-    </div>
-</div>
-<div>
-    <div className={style.ustoz_item}> 
-    <div>
-    <img src={ustoz5}/>
-        <h4>Ismoilov Rahmon Zohidovich</h4>
-        <p>Ona tili o'qituvchisi </p>
-        </div>
-    </div>
-</div>
+)
+}):<div></div>}
 </Carousel>
 <div id="fotolar"></div>
       </div>
@@ -272,36 +326,36 @@ export default class Dashboard extends Component {
   <h1 className={style.sarlavha}> Fotolavhalar</h1>
 <br/>
        <Row>
-           <Col lg={4} md={6} sm={12}>
+       <Col lg={4} md={6} sm={12}>
            <div className={style.gal_item}>
-               <img src={img1}/>
+               <img src={this.state.school!==null?this.state.school.b_r1:''}/>
            </div>
            </Col>
            <Col lg={4} md={6} sm={12}>
            <div className={style.gal_item}>
-               <img src={img2}/>
+               <img src={this.state.school!==null?this.state.school.m_h_h1:''}/>
            </div>
-         </Col>
+           </Col>
            <Col lg={4} md={6} sm={12}>
            <div className={style.gal_item}>
-               <img src={img3}/>
+               <img src={this.state.school!==null?this.state.school.m_h_h2:''}/>
            </div>
-         </Col>
+           </Col>
            <Col lg={4} md={6} sm={12}>
            <div className={style.gal_item}>
-               <img src={img4}/>
+               <img src={this.state.school!==null?this.state.school.m_h_h3:''}/>
            </div>
-         </Col>
+           </Col>
            <Col lg={4} md={6} sm={12}>
            <div className={style.gal_item}>
-               <img src={img5}/>
+               <img src={this.state.school!==null?this.state.school.m_h_h4:''}/>
            </div>
-         </Col>
+           </Col>
            <Col lg={4} md={6} sm={12}>
            <div className={style.gal_item}>
-               <img src={img6}/>
+               <img src={this.state.school!==null?this.state.school.foto5:''}/>
            </div>
-         </Col>
+           </Col>
            
        </Row>
       
@@ -338,44 +392,19 @@ export default class Dashboard extends Component {
   dotListClass="custom-dot-list-style"
   itemClass="carousel-item-padding-40-px"
 >
-<div>
-    <div className={style.new_item}> 
+{this.state.news!==null?this.state.news.map((item)=>{
+    return(
     <div>
-    <img src="https://storage.kun.uz/source/7/sJawyEqqOrAyRPLByRZ35wsUH3hck5ah.jpg"/>
-        <h4>Shavkat Mirziyoyevning O‘zbekiston prezidenti saylovidagi g‘alabasi rasman e'lon qilindi</h4>
-       <p className={style.date}><i className="fa fa-calendar"></i>13.02.2021</p>
-
-        </div>
-    </div>
-</div>
-<div>
-    <div className={style.new_item}> 
-    <div>
-    <img src="https://storage.kun.uz/source/7/Ncp517kA7ErlX7m1zbJ2EIk48yjX4ruf.jpg"/>
-        <h4>Andijonlik fizika o‘qituvchisi hamyonbop pechka ixtiro qildi</h4>
-       <p className={style.date}><i className="fa fa-calendar"></i>13.02.2021</p>
-        </div>
-    </div>
-</div>
-<div>
-    <div className={style.new_item}> 
-    <div>
-    <img src="https://storage.kun.uz/source/7/QDSuZ6vIMZP1C2lZcDo-j8hcuJUQTvnW.jpg"/>
-        <h4>“O‘z vaqtida bolalarimning o‘qishiga jiddiy e'tibor berganimdan faxrlanaman”</h4>
-       <p className={style.date}><i className="fa fa-calendar"></i>13.02.2021</p>
-        </div>
-    </div>
-</div>
-<div>
-    <div className={style.new_item}> 
-    <div>
-    <img src="https://storage.kun.uz/source/thumbnails/_medium/7/Z55FzXP4IwVJS6UMngOq8ryHhwSfs6Yc_medium.jpeg"/>
-        <h4>«Kanada va O‘zbekistondagi hokimlar farqi» - blogerlarning hafta mavzulari</h4>
-       <p className={style.date}><i className="fa fa-calendar"></i>13.02.2021</p>
-        </div>
-    </div>
-</div>
-
+      <div className={style.new_item}> 
+      <div>
+      <img src={item.image}/>
+          <h4>{item.title}</h4>
+         <p className={style.date}><i className="fa fa-calendar"></i>{item.published_time.substring(0,10)}</p>
+  
+          </div>
+      </div>
+  </div>)
+  }):<div></div>}
 </Carousel>
 <br/>
 <div id="video"></div>
@@ -453,7 +482,46 @@ export default class Dashboard extends Component {
       </Row>
       </div>    
   
-  <div style={{ backgroundColor: "white", marginTop: "-30px",textAlign:'center' }}>
+  <div className={style.tad}>
+  
+      <h1 className={style.sarlavha}> Tadbirlar</h1>
+<br/>
+      <Carousel
+  swipeable={false}
+  draggable={false}
+  showDots={true}
+  responsive={responsive2}
+  ssr={true} // means to render carousel on server-side.
+  infinite={true}
+  autoPlay={this.props.deviceType !== "mobile" ? true : false}
+  autoPlaySpeed={3000}
+  keyBoardControl={true}
+  customTransition="all .5"
+  transitionDuration={100}
+  containerClass="carousel-container"
+  removeArrowOnDeviceType={["tablet", "mobile"]}
+  deviceType={this.props.deviceType}
+  dotListClass="custom-dot-list-style"
+  itemClass="carousel-item-padding-40-px"
+>
+{this.state.event!==null?this.state.event.map((item)=>{
+    return(
+    <div>
+      <div className={style.tad_item}> 
+      <div>
+      <img src={item.image}/>
+          <h4>{item.title}</h4>
+         <p className={style.date}><i className="fa fa-calendar"></i>{item.date}</p>
+         <p className={style.mar}><i className="fa fa-map-marker"></i>{item.address}</p>
+         <p className={style.time}><i className="fa fa-clock-o"></i>{item.time}</p>
+  
+          </div>
+      </div>
+  </div>)
+  }):<div></div>}
+</Carousel>
+<br/>    </div>
+<div style={{ backgroundColor: "white", marginTop: "-30px",textAlign:'center' }}>
           <h1 className={style.sarlavha}> Bizning hamkorlarimiz</h1>
 <br/>
 
@@ -571,7 +639,7 @@ export default class Dashboard extends Component {
 
 <YMaps>
 <div>
-<Map style={{width:'100%', height:'400px'}} defaultState={{ center: [41.557922,60.557137], zoom: 9 }} >
+<Map style={{width:'100%', height:'400px'}} defaultState={{ center: [41.3572425,60.818505], zoom: 12 }} >
 <Clusterer
               options={{
                 groupByCoordinates: false,
@@ -579,7 +647,7 @@ export default class Dashboard extends Component {
             >
               <Placemark
                 key={-1}
-                geometry={[41.557922,60.557137]}
+                geometry={[41.3572425,60.818505]}
                 options={{
                   iconLayout: "default#image",
                 }}

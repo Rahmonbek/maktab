@@ -1,10 +1,25 @@
 
+import axios from 'axios'
 import React, { Component } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import style from '../css/Footer.module.css'
+import { url, user } from '../host/Host'
 import logo from '../images/logo.jpg'
 export default class Footer extends Component {
-    render() {
+    state={
+        school:null
+    }
+    getSchool = () => {
+        axios.get(`${url}/school-by-admin/${user}`).then((res) => {
+          this.setState({
+            school: res.data,
+           
+          })
+       }).catch(err=>{console.log(err)})}
+    componentDidMount(){
+        this.getSchool()
+    }
+        render() {
         return (
             <div className={style.foot}>
                 <Row>
@@ -33,21 +48,21 @@ export default class Footer extends Component {
                         <img src={logo}/>
                     </Col>
                     <Col lg={4} md={12} sm={12}>
-                        <p><b>Ishonch telefonlari : </b>+998-93-082-03-72<br/>
-                        +998-71-234-56-78</p>
-                        <p><b>Email : </b>xorazm5gurlan@gmail.com</p>
-                        <p><b>Manzil : </b>Xorazm viloyati Gurlan tumani Buxoriy mahallasi 1-maktab</p>
+                        <p><b>Ishonch telefonlari : </b>{this.state.school!==null?this.state.school.phone:''}<br/>
+                       </p>
+                        <p><b>Email : </b>{this.state.school!==null?this.state.school.email:''}</p>
+                        <p><b>Manzil : </b>{this.state.school!==null?this.state.school.address:''}</p>
                         <div className={style.icons}>
-                        <a href="#">
+                        <a href={this.state.school!==null?this.state.school.telegram:''}>
                                 <i className="fa fa-telegram"></i>
                             </a>
-                            <a href="#">
+                            <a href={this.state.school!==null?this.state.school.instagra:''}>
                                 <i className="fa fa-instagram"></i>
                             </a>
-                            <a href="#">
+                            <a href={this.state.school!==null?this.state.school.youtube:''}>
                                 <i className="fa fa-youtube"></i>
                             </a>
-                            <a href="#">
+                            <a href={this.state.school!==null?this.state.school.facebook:''}>
                                 <i className="fa fa-facebook"></i>
                             </a>
                         </div>
