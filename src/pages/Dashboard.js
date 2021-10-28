@@ -1,28 +1,18 @@
 import video from '../videos/bosh.mp4'
 import video2 from '../videos/bosh2.mp4'
+import video3 from '../videos/bosh3.mp4'
 import React, { Component } from 'react'
 import NavbarT from './NavbarT'
 import style from '../css/Dashboard.module.css'
 import { Col, Row } from 'react-bootstrap'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import ustoz1 from "../images/ustoz1.jpg"
-import ustoz2 from "../images/ustoz2.jpg"
-import ustoz3 from "../images/ustoz3.jpg"
-import ustoz4 from "../images/ustoz4.jpg"
-import ustoz5 from "../images/ustoz5.jpg"
 import school from "../images/gerb.jpg";
 import her2 from "../images/h2.jpg";
 import her3 from "../images/h3.jpg";
 import her4 from "../images/h4.jpg";
 import her5 from "../images/h5.png";
 import her6 from "../images/h6.png";
-import img1 from "../images/img1.jpg";
-import img2 from "../images/img2.jpg";
-import img3 from "../images/img3.jpg";
-import img4 from "../images/img4.jpg";
-import img5 from "../images/img5.jpg";
-import img6 from "../images/img6.jpg";
 import YouTube from '@u-wave/react-youtube';
 import Footer from './Footer'
 import { Clusterer, Map, Placemark, YMaps } from 'react-yandex-maps'
@@ -32,6 +22,7 @@ import { idMaktab, url, user } from '../host/Host'
 import {getNews} from '../host/Config'
 import pic20 from "../images/twitter 2.png";
 import Cards from './Cards'
+import { Link } from 'react-router-dom'
 
 export default class Dashboard extends Component {
   state={
@@ -46,20 +37,20 @@ event:null,
   
   getSchool = () => {
     axios.get(`${url}/school-by-admin/${user}`).then((res) => {
-     console.log(res.data)
+    
       this.setState({
         school: res.data,
        
       });
 axios.get(`${url}/region/${res.data.region}/`).then(res1=>{
   this.setState({region:res1.data})
-  console.log(res1.data)
+  setTimeout(() => {
+    this.setState({
+      loader: false,
+    });
+  }, 3000);
 })
-      // setTimeout(() => {
-      //   this.setState({
-      //     loader: false,
-      //   });
-      // }, 2000);
+     
     });
   };
   getNews = () => {
@@ -109,14 +100,7 @@ s=item.name
     this.getSchool();
 this.getStaff()
 this.getSpec()
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        this.setState({
-          loader: false,
-        });  
-      }, 2000);
-      
-    });
+  
     }
     render() {
         const responsive1 = {
@@ -287,6 +271,8 @@ this.getSpec()
                   </div>
               </Col>
           </Row>
+          <div id="rahbariyat"></div>
+          
       </div>
       <div className={style.new}>
           <div className={style.back}></div>
@@ -357,9 +343,9 @@ this.getSpec()
                <img src={this.state.school!==null?this.state.school.foto5:''}/>
            </div>
            </Col>
-           
+          
        </Row>
-      
+     <button className={style.but}><Link to="/gallery" className={style.linkB}>Barchasini ko'rish</Link></button> 
   </div>
       <div className={style.video1}>
                 <video loop={true} autoPlay={true} muted={true}>
@@ -408,11 +394,21 @@ this.getSpec()
   }):<div></div>}
 </Carousel>
 <br/>
-<div id="video"></div>
 
       </div>
       <Cards/>
+      <div className={style.video1}>
+                <video loop={true} autoPlay={true} muted={true}>
+      <source src={video3} type="video/mp4" />
+  </video>
+  </div>
+  <div className={style.binaf1}>
+
+<h1>Hayot yo‘lida birinchi masala — maktab masalasidir</h1>
+</div>
       <div className={style.videos}>
+<div id="video"></div>
+
   <h1 className={style.sarlavha}> Videolavhalar</h1>
 <br/>
       <Row>
@@ -523,7 +519,7 @@ this.getSpec()
   }):<div></div>}
 </Carousel>
 <br/>    </div>
-<div style={{ backgroundColor: "white", marginTop: "-30px",textAlign:'center' }}>
+<div style={{ backgroundColor: "white", marginTop: "-30px",textAlign:'center', }} className={style.homiy}> 
           <h1 className={style.sarlavha}> Bizning hamkorlarimiz</h1>
 <br/>
 

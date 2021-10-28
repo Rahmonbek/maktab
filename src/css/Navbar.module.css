@@ -3,8 +3,8 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background-color: rgb(255, 255, 255); position: fixed; top:0px;
 display: flex; align-items: center;  padding-left: 0; padding-right:10%;}
-.brand{flex:30%; height:100px; display: flex; align-items: center; justify-content:center;}
-.nav{flex:70%; display: flex;padding-left:30px; }
+.brand{flex:20%; height:100px; display: flex; align-items: center; justify-content:center;}
+.nav{flex:80%; display: flex;padding-left:30px; }
 .nav ul{display:flex;width:100%; list-style: none; padding:10px;}
 .nav ul li{flex:20%; font-size:17px;}
 .brand img{width:80px; height:80px; border-radius:50%; }

@@ -24,10 +24,10 @@ export default class NavbarT extends Component {
     
    }
    closeNav=()=>{
-       if(this.state.id===1){
+    if(this.state.id===1){
         document.querySelector('#navb').style.display="none"
    
-       }
+    }
     }
     render() {
 
@@ -43,21 +43,24 @@ export default class NavbarT extends Component {
                     <div className={style.nav}>
                     <ul id="navb">
                             <li onClick={this.closeNav}>
-                                <NavLink className={style.lik} to="/#">Bosh sahifa</NavLink>
-                            </li>
-                            <li onClick={this.closeNav}>
-                                <NavLink className={style.lik} to="/#fotolar">Foto lavhalar</NavLink>
-                            </li>
-                            <li onClick={this.closeNav}>
-                                <NavLink className={style.lik} to="/#yangilik">Yangiliklar</NavLink>
-                            </li>
-                         
-                            <li onClick={this.closeNav}>
-                                <NavLink className={style.lik} to="/#video">Video lavhalar</NavLink>
+                                <a className={style.lik} href="#">Bosh sahifa</a>
                             </li>
                            
                             <li onClick={this.closeNav}>
-                                <NavLink className={style.lik} to="/#bog'lanish">Bog'lanish</NavLink>
+                                <a className={style.lik} href="#rahbariyat">Rahbariyat</a>
+                            </li>
+                            <li onClick={this.closeNav}>
+                                <a className={style.lik} href="#video">Video lavhalar</a>
+                            </li>
+                            <li onClick={this.closeNav}>
+                                <NavLink className={style.lik} to="/gallery">Foto lavhalar</NavLink>
+                            </li>
+                            <li onClick={this.closeNav}>
+                                <a className={style.lik} href="#yangilik">Yangiliklar</a>
+                            </li>
+                         
+                            <li onClick={this.closeNav}>
+                                <a className={style.lik} href="#bog'lanish">Bog'lanish</a>
                             </li>
                         </ul>
                         </div>
