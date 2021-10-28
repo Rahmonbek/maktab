@@ -46,21 +46,21 @@ export default class NavbarA extends Component {
                                 <NavLink className={style.lik} to="/">Bosh sahifa</NavLink>
                             </li>
                             <li onClick={this.closeNav}>
-                                <NavLink className={style.lik} to="/">Rahbariyat</NavLink>
+                                <NavLink className={style.lik} to="/#rahbariyat">Rahbariyat</NavLink>
                             </li>
                          
                             <li onClick={this.closeNav}>
-                                <NavLink className={style.lik} to="/">Video lavhalar</NavLink>
+                                <NavLink className={style.lik} to="/#video">Video lavhalar</NavLink>
                             </li>
                       
                             <li onClick={this.closeNav}>
                                 <NavLink className={style.lik} to="/gallery">Foto lavhalar</NavLink>
                             </li>
                             <li onClick={this.closeNav}>
-                                <NavLink className={style.lik} to="/yangilik">Yangiliklar</NavLink>
+                                <NavLink className={style.lik} to="/yangiliklar">Yangiliklar</NavLink>
                             </li>
                             <li onClick={this.closeNav}>
-                                <NavLink className={style.lik} to="/">Bog'lanish</NavLink>
+                                <NavLink className={style.lik} to="/#bog'lanish">Bog'lanish</NavLink>
                             </li>
                         </ul>
                         </div>

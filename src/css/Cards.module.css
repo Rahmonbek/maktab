@@ -6,3 +6,11 @@
 
 .cardBolimlar>div{box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;}
 .sarlavha{color:rebeccapurple !important; font-size: 32px !important; text-align:center}
+@media (min-width:1650px){
+    .cards img{height:400px;}
+    .cards h1{font-size: 28px;}
+    .cards p{font-size: 22px;}
+}
+@media (max-width:768px){
+   
+}

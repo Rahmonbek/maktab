@@ -74,10 +74,9 @@ transition: 1s;
 .videos{width:100%; margin-top: 1000px; padding:50px 10%; background-color:white;}
 .but{margin-left:40px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    border:none; padding:10px 40px; background-color:rgb(53, 15, 89); font-size:22px; color:white; margin-top:20px;}
-.linkB{color:white;}
-.but:hover{background-color:white;}
-.but:hover .linkB{color:rgb(53, 15, 89)}
+    border:none; padding:10px 40px; background-color:rgb(53, 15, 89); font-size:22px; color:white; margin-top:40px;}
+.but{color:white;}
+.but:hover{color:rgb(53, 15, 89);background-color:white;}
 .but:active{box-shadow: 0px 0px 0px 0px transparent;}
 .videos_item{padding:20px 10px;}
 .you{width:100%; height:300px; box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;}
@@ -85,6 +84,7 @@ transition: 1s;
 .xarita div{padding:20px;box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;}
 @media (max-width:1050px) and (min-width:700px){
     .video{top:50px;}
+
     .video video{height:500px !important;}
     .binaf{height:500px;top:25px;}
     .binaf1{height:500px;margin-top: -500px; top:50px}
@@ -93,9 +93,12 @@ transition: 1s;
     .new{ background-size: cover; background-position: 0px;}
     .video1{margin-top: 0px; top:100px;}
     .ustoz{margin-top: 0px;}
-    }
+    .videos{margin-top: 0px;}
+    
+}
     @media (max-width:699px){
         .video{top:50px;}
+        .but{font-size: 18px; padding:10px 20px;}
         .video video{height:500px !important; width:200%; position: relative; left:-50%;}
         .binaf{height:500px;top:25px;}
         .binaf1{height:500px;margin-top: -500px; top:50px}
@@ -106,7 +109,9 @@ transition: 1s;
         .video1{margin-top: 0px; top:100px;}
         .ustoz{margin-top: 0px;}
         .tad{margin-top: 0px;}
-        .ustoz_item img{height:250px}
+        .videos{margin-top: 0px;}
+        .ustoz_item{height:430px}
+        .ustoz_item img{height:220px}
         .binaf1 h1{font-size: 25px; line-height: 1.2em; }
         }
 
@@ -121,18 +126,20 @@ transition: 1s;
             .ism{font-size: 30px; }
             .sarlavha{font-size: 45px;}
             .items_item p{font-size: 25px;}
+            .ustoz_item div{height:630px;}
             .ustoz_item p{font-size: 25px;}
             .ustoz_item h4{font-size: 32px;}
             .ustoz_item img{height: 400px ;}
             .gal h1{font-size: 48px;}
             .gal img{height: 350px;}
+            .videos{margin-top: 1600px;}
             .video1 video{width:110%; position: relative; left: -5%; }
             .binaf1{height:110vh}
             .ustoz h1{font-size: 50px;}
             .ustoz{margin-top:1800px}
             .tad h1{font-size: 50px;}
-            .tad{margin-top:1800px}
-
+            .tad{margin-top:900px}
+.new{height:800px}
             .new_item img{height: 380px;}
             .new_item h4{font-size: 30px;}
             .new_item div{height: 620px;}
@@ -184,3 +191,11 @@ transition: 1s;
            .container{margin-top: -100px;}
      .elem{padding-left: 300px;}
        }
+    
+@media (max-width:900px){
+    .htr{margin-top: 20px !important; width:100%; position: relative;}
+    .htr img{position: absolute; left:15%;}
+    .htr p{position: absolute; left:25%;}
+  .colT{text-align: center; margin-left:-40px; width:100%;}
+  .elem{padding-left: 20%; height:450px;}
+} 

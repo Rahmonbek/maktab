@@ -10,6 +10,7 @@ import GridLoader from "react-spinners/GridLoader";
 import axios from 'axios'
 import { idMaktab, url, user } from '../host/Host'
 import NavbarA from './NavbarA'
+import Footer from './Footer'
 
 
 export default class Gallery extends Component {
@@ -191,7 +192,7 @@ axios.get(`${url}/region/${res.data.region}/`).then(res1=>{
         
     </Row>
 </div>
-
+<Footer/>
             </div>
     }</>)
     }

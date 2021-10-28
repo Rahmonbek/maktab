@@ -10,9 +10,7 @@ display: flex; align-items: center;  padding-left: 0; padding-right:10%;}
 .brand img{width:80px; height:80px; border-radius:50%; }
 .lik{color:rgb(118, 14, 105)}
 .lik:hover{color:gold;}
-.tool{display:none !important;}
-.tool{display: inline-block; position: fixed; top:30px; right:40px;}
-.tool i{font-size: 50px; color:rgb(75, 23, 124)}
+.tool{display:none;}
 
 @media (max-width:1050px){
    .tool{display: inline-block; position: fixed; top:30px; right:40px;}

@@ -345,7 +345,10 @@ this.getSpec()
            </Col>
           
        </Row>
-     <button className={style.but}><Link to="/gallery" className={style.linkB}>Barchasini ko'rish</Link></button> 
+       
+   <br/>
+   <br/>
+   <Link to="/gallery" className={style.but}>Barchasini ko'rish</Link>
   </div>
       <div className={style.video1}>
                 <video loop={true} autoPlay={true} muted={true}>
@@ -394,6 +397,9 @@ this.getSpec()
   }):<div></div>}
 </Carousel>
 <br/>
+       <br/>
+              <br/>
+<Link to="/yangiliklar"  className={style.but}>Barchasini ko'rish</Link>
 
       </div>
       <Cards/>
@@ -449,7 +455,7 @@ this.getSpec()
          
               <div className={style.videos_item}>
               <YouTube
-  video="jsISdAeASo4"                
+  video="x3M_2IBy_Lk"                
   className={style.you}
   autoplay={true}
   muted={true}                

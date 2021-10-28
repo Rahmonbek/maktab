@@ -54,7 +54,7 @@ export default class Cards extends Component {
                           backgroundColor: "#801085",
                           
                           padding: "10%",
-                          height: "450px",
+                          height: "470px",
                         }}
                       >
                         <h1>Maktab oshxonasi</h1>
@@ -90,7 +90,7 @@ export default class Cards extends Component {
                           backgroundColor: "#801085",
                           
                           padding: "10%",
-                          height: "450px",
+                          height: "470px",
                         }}
                       >
                         <h1>Sport mashg'ulotlari</h1>
@@ -128,7 +128,7 @@ export default class Cards extends Component {
                           backgroundColor: "#801085",
                           
                           padding: "10%",
-                          height: "450px",
+                          height: "470px",
                         }}
                       >
                         <h1>San'at va madaniyat</h1>
@@ -164,7 +164,7 @@ export default class Cards extends Component {
                           backgroundColor: "#801085",
                           
                           padding: "10%",
-                          height: "450px",
+                          height: "470px",
                         }}
                       >
                         <h1>Axborot texnologiyalari</h1>
@@ -200,7 +200,7 @@ export default class Cards extends Component {
                           backgroundColor: "#801085",
                           
                           padding: "10%",
-                          height: "450px",
+                          height: "470px",
                         }}
                       >
                         <h1>Xavfsizlik va qo'riqlash</h1>
@@ -237,7 +237,7 @@ export default class Cards extends Component {
                           backgroundColor: "#801085",
                           
                           padding: "10%",
-                          height: "450px",
+                          height: "470px",
                         }}
                       >
                         <h1>Sog'lik va salomatlik</h1>

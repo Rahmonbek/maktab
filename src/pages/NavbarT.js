@@ -56,7 +56,7 @@ export default class NavbarT extends Component {
                                 <NavLink className={style.lik} to="/gallery">Foto lavhalar</NavLink>
                             </li>
                             <li onClick={this.closeNav}>
-                                <a className={style.lik} href="#yangilik">Yangiliklar</a>
+                                <NavLink className={style.lik} to="/yangiliklar">Yangiliklar</NavLink>
                             </li>
                          
                             <li onClick={this.closeNav}>
