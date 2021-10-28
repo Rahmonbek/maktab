@@ -27,16 +27,52 @@ import YouTube from '@u-wave/react-youtube';
 import Footer from './Footer'
 import { Clusterer, Map, Placemark, YMaps } from 'react-yandex-maps'
 import GridLoader from "react-spinners/GridLoader";
+import axios from 'axios'
+import { url, user } from '../host/Host'
+import {getNews} from '../host/Config'
 
 export default class Dashboard extends Component {
   state={
     loader:true,
+    news:null,
+    school:null
   }
-  componentDidMount(){
-    setTimeout(()=>{
-      this.setState({loader:false})
-    }, 5000)
-  }
+  
+  getSchool = () => {
+    axios.get(`${url}/school-by-admin/${user}`).then((res) => {
+      this.setState({
+        school: res.data,
+      });
+      // setTimeout(() => {
+      //   this.setState({
+      //     loader: false,
+      //   });
+      // }, 2000);
+    });
+  };
+  getNews = () => {
+    getNews()
+      .then((res) => {
+      console.log(res.data)  
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  componentDidMount() {
+    this.getNews();
+    this.getSchool();
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        this.setState({
+          loader: false,
+        });  
+      }, 2000);
+      
+    });
+    }
     render() {
         const responsive1 = {
             superLargeDesktop: {
