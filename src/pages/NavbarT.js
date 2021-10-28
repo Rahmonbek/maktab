@@ -24,8 +24,11 @@ export default class NavbarT extends Component {
     
    }
    closeNav=()=>{
-    document.querySelector('#navb').style.display="none"
-   }
+       if(this.state.id===1){
+        document.querySelector('#navb').style.display="none"
+   
+       }
+    }
     render() {
 
         return (
@@ -40,21 +43,21 @@ export default class NavbarT extends Component {
                     <div className={style.nav}>
                     <ul id="navb">
                             <li onClick={this.closeNav}>
-                                <a className={style.lik} activeStyle={{color:"gold"}} href="#">Bosh sahifa</a>
+                                <NavLink className={style.lik} to="/#">Bosh sahifa</NavLink>
                             </li>
                             <li onClick={this.closeNav}>
-                                <a className={style.lik} activeStyle={{color:"gold"}} href="#fotolar">Foto lavhalar</a>
+                                <NavLink className={style.lik} to="/#fotolar">Foto lavhalar</NavLink>
                             </li>
                             <li onClick={this.closeNav}>
-                                <a className={style.lik} activeStyle={{color:"gold"}} href="#yangilik">Yangiliklar</a>
+                                <NavLink className={style.lik} to="/#yangilik">Yangiliklar</NavLink>
                             </li>
                          
                             <li onClick={this.closeNav}>
-                                <a className={style.lik} activeStyle={{color:"gold"}} href="#video">Video lavhalar</a>
+                                <NavLink className={style.lik} to="/#video">Video lavhalar</NavLink>
                             </li>
                            
                             <li onClick={this.closeNav}>
-                                <a className={style.lik} activeStyle={{color:"gold"}} href="#bog'lanish">Bog'lanish</a>
+                                <NavLink className={style.lik} to="/#bog'lanish">Bog'lanish</NavLink>
                             </li>
                         </ul>
                         </div>

@@ -31,6 +31,7 @@ import axios from 'axios'
 import { idMaktab, url, user } from '../host/Host'
 import {getNews} from '../host/Config'
 import pic20 from "../images/twitter 2.png";
+import Cards from './Cards'
 
 export default class Dashboard extends Component {
   state={
@@ -410,6 +411,7 @@ this.getSpec()
 <div id="video"></div>
 
       </div>
+      <Cards/>
       <div className={style.videos}>
   <h1 className={style.sarlavha}> Videolavhalar</h1>
 <br/>
