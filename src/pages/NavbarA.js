@@ -50,11 +50,11 @@ export default class NavbarA extends Component {
                             </li>
                          
                             <li onClick={this.closeNav}>
-                                <NavLink className={style.lik} to="/#video">Video lavhalar</NavLink>
+                                <NavLink className={style.lik} to="/#video">Videolavhalar</NavLink>
                             </li>
                       
                             <li onClick={this.closeNav}>
-                                <NavLink className={style.lik} to="/gallery">Foto lavhalar</NavLink>
+                                <NavLink className={style.lik} to="/gallery">Fotolavhalar</NavLink>
                             </li>
                             <li onClick={this.closeNav}>
                                 <NavLink className={style.lik} to="/yangiliklar">Yangiliklar</NavLink>
