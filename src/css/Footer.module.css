@@ -12,6 +12,7 @@
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     height:50px; display: flex; align-items:center; justify-content: center; background-color:white; color:rebeccapurple;}
 .icons i{font-size: 25px;}
+.foot img{width:200px;}
 @media (max-width:1050px){
    .foot ul{justify-content: center; width:100%;}
    .foot li{width:100%; text-align: center;margin-top: 30px; margin-left:-20px}

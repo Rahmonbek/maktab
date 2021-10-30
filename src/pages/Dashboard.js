@@ -34,7 +34,9 @@ export default class Dashboard extends Component {
 spec:null,
 event:null,  
 }
-  
+_onEnd(event) {
+  // access to player in all event handlers via event.target
+  event.target.pauseVideo();}  
   getSchool = () => {
     axios.get(`${url}/school-by-admin/${user}`).then((res) => {
     
@@ -78,6 +80,7 @@ axios.get(`${url}/region/${res.data.region}/`).then(res1=>{
       })
     })
   }
+
   getSpec=()=>{
   axios.get(`${url}/spec/`).then(res=>{
     this.setState({
@@ -85,6 +88,7 @@ axios.get(`${url}/region/${res.data.region}/`).then(res1=>{
     })
   })
 }
+
 echoSpec=(id)=>{
   var s=""
   this.state.spec.map(item=>{
@@ -422,6 +426,8 @@ this.getSpec()
      
               <div className={style.videos_item}>
               <YouTube
+            showRelatedVideos={false}
+            
   video='fFzLipInf0M'                
   className={style.you}
   autoplay={true}
@@ -433,6 +439,7 @@ this.getSpec()
          
               <div className={style.videos_item}>
               <YouTube
+             showRelatedVideos={false}
   video="CdAYBuCc3Iw"                
   className={style.you}
   autoplay={true}
@@ -444,6 +451,7 @@ this.getSpec()
          
               <div className={style.videos_item}>
               <YouTube
+             showRelatedVideos={false}
   video="rvvBEdwPcSE"                
   className={style.you}
   autoplay={true}
@@ -455,6 +463,7 @@ this.getSpec()
          
               <div className={style.videos_item}>
               <YouTube
+             showRelatedVideos={false}
   video="x3M_2IBy_Lk"                
   className={style.you}
   autoplay={true}
@@ -466,6 +475,7 @@ this.getSpec()
          
               <div className={style.videos_item}>
               <YouTube
+             showRelatedVideos={false}
   video="vdaZjEu1Ydc"                
   className={style.you}
   autoplay={true}
@@ -477,6 +487,7 @@ this.getSpec()
          
               <div className={style.videos_item}>
               <YouTube
+             showRelatedVideos={false}
   video="q7HaWx2zNeA"                
   className={style.you}
   autoplay={true}
