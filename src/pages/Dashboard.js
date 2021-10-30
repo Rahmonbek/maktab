@@ -422,7 +422,7 @@ this.getSpec()
      
               <div className={style.videos_item}>
               <YouTube
-  video='GVdFaADego0'                
+  video='fFzLipInf0M'                
   className={style.you}
   autoplay={true}
   muted={true}                
