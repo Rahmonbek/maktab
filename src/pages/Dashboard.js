@@ -426,12 +426,12 @@ this.getSpec()
      
               <div className={style.videos_item}>
               <YouTube
-              onEnd={this._onEnd}
+             
   video='fFzLipInf0M'                
   className={style.you}
   autoplay={true}
   muted={true}
-  
+  onEnd={this._onEnd}
   opts={{
     playerVars: {
      
