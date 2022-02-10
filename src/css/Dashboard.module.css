@@ -53,17 +53,25 @@ transition: 1s;
     background-size:100% 100%; background-position: 0px -600px; padding:100px 10%;}
 .back{width:100%; background-color:transparent; height:100%; position:absolute; top:0px; left:0px}
 .new_item img{width: 100%; height:230px;}
+.alo_item img{width: 100%; height:260px;}
 .new_item{padding:10px;}
+.alo_item{padding:10px;}
 .new_item div{padding:10px; height:440px; position: relative;  background-color:white;box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; padding-bottom:5px;}
+.alo_item div{padding:10px; height:440px; position: relative;  background-color:white;box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; padding-bottom:5px;}
 .new_item h4{font-size: 22px; margin-top:20px; text-align: center; color:rebeccapurple}
+.alo_item h4{font-size: 22px; margin-top:20px; text-align: center; color:rebeccapurple}
 .tad_item img{width: 100%; height:230px;}
 .tad_item{padding:10px;}
 .tad_item div{padding:10px; height:410px; position: relative;  background-color:white;box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; padding-bottom:5px;}
 .tad_item h4{font-size: 22px; margin-top:20px; text-align: center; color:rebeccapurple}
 
 .new_item .text{font-size: 18px; color:rebeccapurple; text-align: center;}
+.alo_item .text{font-size: 18px; color:rebeccapurple; text-align: center;}
 .new_item .date{font-size: 16px; position: absolute; bottom:0px; left:0px; width:100%; color:rebeccapurple; text-align: center;}
+.alo_item .date{font-size: 16px; position: absolute; bottom:0px; left:0px; width:100%; color:rebeccapurple; text-align: center;}
+.alo_item .cl{font-size: 17px;margin-top: 20px; width:100%; color:rebeccapurple; text-align: center;}
 .new_item .date i{font-size: 18px; margin-right: 10px; color:rebeccapurple; text-align: center;}
+.alo_item .date i{font-size: 18px; margin-right: 10px; color:rebeccapurple; text-align: center;}
 .tad_item .text{font-size: 18px; color:rebeccapurple; text-align: center;}
 .tad_item .date{font-size: 16px; position: absolute; bottom:30px; left:0px; width:100%; color:rebeccapurple; text-align: center;}
 .tad_item .date i{font-size: 18px; margin-right: 10px; color:rebeccapurple; text-align: center;}
@@ -141,10 +149,16 @@ transition: 1s;
             .tad{margin-top:900px}
 .new{height:800px}
             .new_item img{height: 380px;}
+            .alo_item img{height: 380px;}
             .new_item h4{font-size: 30px;}
+            .alo_item h4{font-size: 30px;}
             .new_item div{height: 620px;}
+            .alo_item div{height: 620px;}
             .new_item .date{font-size: 25px;}
+            .alo_item .date{font-size: 25px;}
+            .alo_item .cl{font-size: 25px;}
             .new_item .date i{font-size: 25px;}
+            .alo_item .date i{font-size: 25px;}
            
             .tad_item img{height: 380px;}
             .tad_item h4{font-size: 30px;}

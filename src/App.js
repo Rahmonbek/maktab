@@ -6,6 +6,7 @@ import 'antd/dist/antd.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Gallery from './pages/Gallery';
 import Yangiliklar from './pages/Yangiliklar';
+import Eslatma from './pages/Eslatma';
 
 export default class App extends Component {
   render() {
@@ -26,6 +27,8 @@ export default class App extends Component {
 </Switch>
       
         </BrowserRouter>
+        <Eslatma/>
+
       </div>
     )
   }

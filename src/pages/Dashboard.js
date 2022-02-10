@@ -23,6 +23,7 @@ import {getNews} from '../host/Config'
 import pic20 from "../images/twitter 2.png";
 import Cards from './Cards'
 import { Link } from 'react-router-dom'
+import Alochilar from './Alochilar'
 
 export default class Dashboard extends Component {
   state={
@@ -237,7 +238,7 @@ this.getSpec()
                 </Col>
               </Row>
             </div>
-
+<Alochilar/>
       <div className={style.items}>
       <h1 className={style.sarlavha}> Bizning afzalliklarimiz</h1>
 <br/>
